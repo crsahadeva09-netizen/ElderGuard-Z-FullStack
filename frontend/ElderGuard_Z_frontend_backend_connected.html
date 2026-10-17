@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElderGuard Z — Banking Security Portal</title>
+  <style>
+    :root {
+      --bg-body: #f8fafc;
+      --bg-sidebar: #ffffff;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --safe-green: #059669;
+      --safe-green-light: #10b981;
+      --safe-green-bg: #ecfdf5;
+      --safe-green-border: #a7f3d0;
+      --alert-red: #ef4444;
+      --alert-red-bg: #fef2f2;
+      --alert-yellow: #d97706;
+      --alert-yellow-bg: #fffbeb;
+      --accent-blue: #0284c7;
+      --accent-blue-bg: #f0f9ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* -------------------------------------------------------------
+       1. LOGIN / OTP OVERLAY
+    -------------------------------------------------------------- */
+    #auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top right, #dcfce7, #f8fafc 65%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      padding: 20px;
+    }
+
+    .auth-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 40px -15px rgba(5, 150, 105, 0.15), 0 0 0 1px rgba(16, 185, 129, 0.08);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 440px;
+      padding: 36px 32px;
+      text-align: center;
+    }
+
+    .auth-logo {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 12px auto;
+      display: block;
+    }
+
+    .auth-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .auth-subtitle {
+      font-size: 0.8rem;
+      color: var(--safe-green);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .auth-step {
+      display: none;
+      text-align: left;
+    }
+
+    .auth-step.active {
+      display: block;
+    }
+
+    .input-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .phone-prefix {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .styled-input {
+      width: 100%;
+      padding: 12px 14px 12px 52px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      background: #fafafa;
+      letter-spacing: 0.05em;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .styled-input:focus {
+      border-color: var(--safe-green);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+      background: #ffffff;
+    }
+
+    .otp-input-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .otp-digit {
+      width: 58px;
+      height: 56px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-main);
+      background: #fafafa;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .otp-digit:focus {
+      border-color: var(--safe-green);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+      background: #ffffff;
+    }
+
+    .btn-submit-auth {
+      width: 100%;
+      padding: 13px;
+      background: var(--safe-green);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    }
+
+    .btn-submit-auth:hover {
+      background: #047857;
+    }
+
+    .demo-otp-banner {
+      background: var(--safe-green-bg);
+      border: 1px dashed var(--safe-green-border);
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 0.8rem;
+      color: #065f46;
+      margin-bottom: 16px;
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    .auth-error {
+      color: var(--alert-red);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 8px;
+      display: none;
+    }
+
+    /* -------------------------------------------------------------
+       2. DASHBOARD APP LAYOUT
+    -------------------------------------------------------------- */
+    .app-container {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .app-container.unlocked {
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 270px;
+      background-color: var(--bg-sidebar);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      padding: 22px 16px;
+    }
+
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 26px;
+      padding-left: 6px;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+    }
+
+    .brand-meta h2 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.15;
+    }
+
+    .brand-meta span {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--safe-green);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-group-title {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 800;
+      margin: 0 0 10px 8px;
+    }
+
+    .sidebar-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      transition: all 0.15s ease;
+    }
+
+    .menu-item:hover {
+      background: var(--safe-green-bg);
+      color: var(--safe-green);
+    }
+
+    .menu-item.active {
+      background: var(--safe-green-bg);
+      border-color: var(--safe-green-border);
+      color: var(--safe-green);
+      font-weight: 800;
+    }
+
+    .menu-item svg {
+      width: 18px;
+      height: 18px;
+      opacity: 0.85;
+      flex-shrink: 0;
+    }
+
+    .menu-badge {
+      margin-left: auto;
+      background: var(--alert-red-bg);
+      color: var(--alert-red);
+      border: 1px solid #fecaca;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: 999px;
+    }
+
+    .sidebar-footer-card {
+      background: var(--safe-green-bg);
+      border: 1px solid var(--safe-green-border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 20px;
+    }
+
+    .proto-icon {
+      width: 24px;
+      height: 24px;
+      background: #ffffff;
+      border: 1px solid var(--safe-green-border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      color: var(--safe-green);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .proto-title {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .proto-desc {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .proto-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: var(--safe-green);
+      font-weight: 800;
+    }
+
+    .dot-green {
+      width: 7px;
+      height: 7px;
+      background: var(--safe-green-light);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--safe-green-light);
+    }
+
+    /* Main Viewport */
+    .main-viewport {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: var(--bg-body);
+    }
+
+    .top-navbar {
+      height: 64px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 36px;
+    }
+
+    .breadcrumbs {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .breadcrumbs span {
+      color: var(--safe-green);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .demo-mode-pill {
+      background: var(--safe-green-bg);
+      border: 1px solid var(--safe-green-border);
+      color: var(--safe-green);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    .user-avatar {
+      width: 34px;
+      height: 34px;
+      background: var(--safe-green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .content-body {
+      flex: 1;
+      padding: 32px 36px;
+      overflow-y: auto;
+    }
+
+    .tab-section {
+      display: none;
+    }
+    .tab-section.active {
+      display: block;
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--safe-green);
+      margin-bottom: 4px;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .header-row h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .header-row p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .demo-env-badge {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    /* Summary Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      position: relative;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .stat-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .stat-badge-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .icon-blue { background: var(--accent-blue-bg); color: var(--accent-blue); }
+    .icon-orange { background: var(--alert-yellow-bg); color: var(--alert-yellow); }
+    .icon-purple { background: #faf5ff; color: #9333ea; }
+
+    .stat-number {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 14px 0 8px 0;
+      line-height: 1;
+    }
+
+    .stat-footnote {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .dot-sm {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    /* Middle Grid: Table + Alerts */
+    .middle-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .panel-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .panel-head h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .panel-head p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .link-action {
+      font-size: 0.8rem;
+      color: var(--safe-green);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--border-color);
+    }
+
+    .data-table td {
+      padding: 14px 0;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pill-tag {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .pill-tag.low { background: var(--safe-green-bg); color: var(--safe-green); }
+    .pill-tag.high { background: var(--alert-red-bg); color: var(--alert-red); }
+    .pill-tag.medium { background: var(--alert-yellow-bg); color: var(--alert-yellow); }
+
+    .status-text-app {
+      background: var(--safe-green-bg);
+      color: var(--safe-green);
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .status-text-hold {
+      background: var(--alert-yellow-bg);
+      color: var(--alert-yellow);
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .status-text-rev {
+      background: var(--alert-red-bg);
+      color: var(--alert-red);
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .alerts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .alert-card-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: all 0.15s ease;
+    }
+
+    .alert-card-item:hover {
+      border-color: var(--safe-green-border);
+    }
+
+    .alert-icon-sq {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .sq-red { background: var(--alert-red-bg); color: var(--alert-red); }
+    .sq-yellow { background: var(--alert-yellow-bg); color: var(--alert-yellow); }
+
+    .alert-content {
+      flex: 1;
+    }
+
+    .alert-line-1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+    }
+
+    .alert-title-text {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .alert-amount-text {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .alert-subtext {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .quick-action-bar {
+      background: #ffffff;
+      border: 1px solid var(--safe-green-border);
+      border-radius: 14px;
+      padding: 20px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.05);
+    }
+
+    .quick-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .quick-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .btn-assess {
+      background: var(--safe-green);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 20px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.2);
+    }
+
+    .btn-assess:hover {
+      background: #047857;
+    }
+
+    /* Simulator Styles */
+    .sim-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 20px;
+    }
+
+    .scenario-picker-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .scenario-label {
+      background: #ffffff;
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .scenario-label.active {
+      border-color: var(--safe-green);
+      background: var(--safe-green-bg);
+    }
+
+    .scenario-label input {
+      accent-color: var(--safe-green);
+      width: 17px;
+      height: 17px;
+    }
+
+    .scenario-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .scenario-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .eval-row-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .eval-spec {
+      background: var(--bg-body);
+      border: 1px solid var(--border-color);
+      padding: 14px;
+      border-radius: 10px;
+    }
+
+    .eval-spec .lbl {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 800;
+    }
+
+    .eval-spec .val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-top: 4px;
+    }
+
+    .decision-callout {
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .decision-callout.approve {
+      background: var(--safe-green-bg);
+      border: 1.5px solid var(--safe-green-border);
+    }
+    .decision-callout.approve .dec-status { color: var(--safe-green); }
+
+    .decision-callout.challenge {
+      background: var(--alert-yellow-bg);
+      border: 1.5px solid #fde68a;
+    }
+    .decision-callout.challenge .dec-status { color: var(--alert-yellow); }
+
+    .decision-callout.block {
+      background: var(--alert-red-bg);
+      border: 1.5px solid #fecaca;
+    }
+    .decision-callout.block .dec-status { color: var(--alert-red); }
+
+    .dec-title {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 800;
+    }
+
+    .dec-status {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin: 8px 0;
+    }
+
+    .dec-reason {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Common Card Grid & Setting Row Styles */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .setting-row:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .setting-info p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: #cbd5e1;
+      transition: .3s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--safe-green);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .range-input {
+      accent-color: var(--safe-green);
+      cursor: pointer;
+      width: 130px;
+    }
+
+    .btn-outline {
+      padding: 7px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--text-main);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--safe-green);
+      color: var(--safe-green);
+    }
+
+    .btn-danger-outline {
+      border-color: #fca5a5;
+      color: var(--alert-red);
+    }
+
+    .btn-danger-outline:hover {
+      background: var(--alert-red-bg);
+    }
+
+    .app-footer {
+      border-top: 1px solid var(--border-color);
+      padding: 14px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      background: #ffffff;
+    }
+
+    .footer-api {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--safe-green);
+    }
+
+    /* Floating Toast Alerts */
+    .toast-notice {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 100000;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.2s ease-in-out;
+      pointer-events: none;
+    }
+
+    .toast-notice.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       1. LOGIN / OTP OVERLAY SCREEN
+  =========================================== -->
+  <div id="auth-overlay">
+    <div class="auth-card">
+      <svg class="auth-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="18" r="6" fill="#10b981"/>
+        <circle cx="82" cy="50" r="6" fill="#0284c7"/>
+        <circle cx="50" cy="82" r="6" fill="#10b981"/>
+        <circle cx="18" cy="50" r="6" fill="#0284c7"/>
+        <circle cx="28" cy="28" r="4.5" fill="#10b981"/>
+        <circle cx="72" cy="28" r="4.5" fill="#0284c7"/>
+        <circle cx="72" cy="72" r="4.5" fill="#10b981"/>
+        <circle cx="28" cy="72" r="4.5" fill="#0284c7"/>
+        <path d="M50 28 C50 42 58 50 72 50 C58 50 50 58 50 72 C50 58 42 50 28 50 C42 50 50 42 50 28 Z" fill="url(#authGrad)" />
+        <defs>
+          <linearGradient id="authGrad" x1="28" y1="28" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#10b981"/>
+            <stop offset="1" stop-color="#0284c7"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <h1 class="auth-title">ElderGuard Z</h1>
+      <div class="auth-subtitle">ASTRAMIND NEXUS SECURITY</div>
+
+      <div class="auth-step active" id="step-phone">
+        <label class="input-label" for="phoneInput">Enter Registered Mobile Number</label>
+        <div class="input-group">
+          <span class="phone-prefix">+91</span>
+          <input 
+            type="tel" 
+            id="phoneInput" 
+            class="styled-input" 
+            placeholder="98765 43210" 
+            maxlength="10" 
+            autocomplete="off"
+          />
+        </div>
+        <p class="auth-error" id="phoneError">Please enter a valid 10-digit mobile number.</p>
+        <button type="button" class="btn-submit-auth" id="btnSendOtp">Send OTP Verification Code</button>
+      </div>
+
+      <div class="auth-step" id="step-otp">
+        <div class="demo-otp-banner" id="demoOtpBox">
+          Security Code Sent to <strong id="dispEnteredPhone">+91 XXXXX XXXXX</strong><br>
+          <span style="font-weight: 800; color: #059669; font-size: 0.95rem;">Test Code: <span id="genOtpCode">7429</span></span>
+        </div>
+
+        <label class="input-label">Enter 4-Digit Security OTP</label>
+        <div class="otp-input-row">
+          <input type="text" maxlength="1" class="otp-digit" id="otp1" autofocus />
+          <input type="text" maxlength="1" class="otp-digit" id="otp2" />
+          <input type="text" maxlength="1" class="otp-digit" id="otp3" />
+          <input type="text" maxlength="1" class="otp-digit" id="otp4" />
+        </div>
+
+        <p class="auth-error" id="otpError">Incorrect OTP code. Enter the 4-digit code above.</p>
+        <button type="button" class="btn-submit-auth" id="btnVerifyOtp">Verify & Open Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       2. MAIN APPLICATION (10 Dedicated Views)
+  =========================================== -->
+  <div class="app-container" id="appRoot">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <svg class="brand-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="18" r="6" fill="#10b981"/>
+          <circle cx="82" cy="50" r="6" fill="#0284c7"/>
+          <circle cx="50" cy="82" r="6" fill="#10b981"/>
+          <circle cx="18" cy="50" r="6" fill="#0284c7"/>
+          <circle cx="28" cy="28" r="4.5" fill="#10b981"/>
+          <circle cx="72" cy="28" r="4.5" fill="#0284c7"/>
+          <circle cx="72" cy="72" r="4.5" fill="#10b981"/>
+          <circle cx="28" cy="72" r="4.5" fill="#0284c7"/>
+          <path d="M50 28 C50 42 58 50 72 50 C58 50 50 58 50 72 C50 58 42 50 28 50 C42 50 50 42 50 28 Z" fill="url(#sideGrad)" />
+          <defs>
+            <linearGradient id="sideGrad" x1="28" y1="28" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#10b981"/>
+              <stop offset="1" stop-color="#0284c7"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-meta">
+          <h2>ElderGuard Z</h2>
+          <span>ASTRAMIND NEXUS</span>
+        </div>
+      </div>
+
+      <div class="nav-group-title">WORKSPACE</div>
+      <nav class="sidebar-menu">
+        <button class="menu-item active" data-tab="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </button>
+
+        <button class="menu-item" data-tab="live-monitoring">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg>
+          Live Monitoring
+        </button>
+
+        <button class="menu-item" data-tab="transactions">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/></svg>
+          Transactions
+        </button>
+
+        <button class="menu-item" data-tab="new-transaction">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          New Transaction
+        </button>
+
+        <button class="menu-item" data-tab="review-queue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          Review Queue
+        </button>
+
+        <button class="menu-item" data-tab="security-alerts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Security Alerts
+          <span class="menu-badge">2</span>
+        </button>
+
+        <button class="menu-item" data-tab="customers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Customers
+        </button>
+
+        <button class="menu-item" data-tab="analytics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Analytics
+        </button>
+
+        <button class="menu-item" data-tab="audit-logs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg>
+          Audit Logs
+        </button>
+
+        <button class="menu-item" data-tab="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Settings
+        </button>
+      </nav>
+
+      <div class="sidebar-footer-card">
+        <div class="proto-icon">✓</div>
+        <div class="proto-title">Safe Banking Mode</div>
+        <div class="proto-desc">OTP Verified Session. AI monitoring active for vulnerable accounts.</div>
+        <div class="proto-status">
+          <span class="dot-green"></span>
+          Live Security Feed
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Viewport -->
+    <main class="main-viewport">
+      <header class="top-navbar">
+        <div class="breadcrumbs">SECURITY MONITORING &nbsp;/&nbsp; <span id="topBreadcrumb">Dashboard</span></div>
+        <div class="top-actions">
+          <span class="demo-mode-pill">DEMO ENVIRONMENT</span>
+          <div class="user-avatar" id="avatarInitials">EG</div>
+        </div>
+      </header>
+
+      <!-- ================= 01: DASHBOARD ================= -->
+      <div class="content-body tab-section active" id="view-dashboard">
+        <div class="section-eyebrow">OVERVIEW</div>
+        <div class="header-row">
+          <div>
+            <h1>Security Control Center</h1>
+            <p>Monitor transactions and review potential elder financial exploitation risks.</p>
+          </div>
+          <span class="demo-env-badge">SAFE SYSTEM ONLINE</span>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-title">Total Transactions</span>
+            <div class="stat-badge-icon icon-blue">↗</div>
+            <div class="stat-number">3</div>
+            <div class="stat-footnote">
+              <span class="dot-sm" style="background: var(--accent-blue);"></span>
+              Records in this demo
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-title">Flagged Transactions</span>
+            <div class="stat-badge-icon icon-orange">!</div>
+            <div class="stat-number" style="color: var(--alert-yellow);">2</div>
+            <div class="stat-footnote">
+              <span class="dot-sm" style="background: var(--alert-yellow);"></span>
+              Require further review
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-title">Transactions On Hold</span>
+            <div class="stat-badge-icon icon-purple">II</div>
+            <div class="stat-number" style="color: #9333ea;">1</div>
+            <div class="stat-footnote">
+              <span class="dot-sm" style="background: #9333ea;"></span>
+              Marked on hold in demo
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-grid">
+          <div class="panel-box">
+            <div class="panel-head">
+              <div>
+                <h3>Recent Transactions</h3>
+                <p>Review the latest evaluated transfers.</p>
+              </div>
+              <a class="link-action" onclick="switchTab('transactions', 'Transactions')">View all →</a>
+            </div>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>TRANSACTION</th>
+                  <th>CUSTOMER</th>
+                  <th>AMOUNT</th>
+                  <th>RISK</th>
+                  <th>STATUS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 700;">TX-101</td>
+                  <td>CUST-104</td>
+                  <td style="font-weight: 700;">₹1,850.00</td>
+                  <td><span class="pill-tag low">Low</span></td>
+                  <td><span class="status-text-app">Approved (Demo)</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">TX-102</td>
+                  <td>CUST-208</td>
+                  <td style="font-weight: 700;">₹48,500.00</td>
+                  <td><span class="pill-tag high">High</span></td>
+                  <td><span class="status-text-hold">On Hold</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700;">TX-103</td>
+                  <td>CUST-117</td>
+                  <td style="font-weight: 700;">₹12,600.00</td>
+                  <td><span class="pill-tag medium">Medium</span></td>
+                  <td><span class="status-text-rev">Review</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="panel-box">
+            <div class="panel-head">
+              <div>
+                <h3>Security Alerts</h3>
+                <p>Items needing immediate verification.</p>
+              </div>
+              <span class="link-action" onclick="switchTab('security-alerts', 'Security Alerts')">→</span>
+            </div>
+
+            <div class="alerts-list">
+              <div class="alert-card-item">
+                <div class="alert-icon-sq sq-red">!</div>
+                <div class="alert-content">
+                  <div class="alert-line-1">
+                    <span class="alert-title-text">High risk • TX-102</span>
+                    <span class="alert-amount-text">₹48,500.00</span>
+                  </div>
+                  <div class="alert-subtext">Large sample amount to an unfamiliar recipient. Review suggested.</div>
+                </div>
+              </div>
+
+              <div class="alert-card-item">
+                <div class="alert-icon-sq sq-yellow">△</div>
+                <div class="alert-content">
+                  <div class="alert-line-1">
+                    <span class="alert-title-text">Medium risk • TX-103</span>
+                    <span class="alert-amount-text">₹12,600.00</span>
+                  </div>
+                  <div class="alert-subtext">Sample transaction flagged for a manual review.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-action-bar">
+          <div>
+            <div class="quick-title">Quick action</div>
+            <div class="quick-desc">Preview how a new transaction is evaluated by the fraud detection pipeline.</div>
+          </div>
+          <button class="btn-assess" onclick="switchTab('new-transaction', 'New Transaction')">+ Assess a transaction</button>
+        </div>
+      </div>
+
+      <!-- ================= 02: LIVE MONITORING ================= -->
+      <div class="content-body tab-section" id="view-live-monitoring">
+        <div class="section-eyebrow">REAL-TIME INFERENCE</div>
+        <div class="header-row">
+          <div>
+            <h1>Live Transaction Monitoring</h1>
+            <p>Real-time stream of incoming elder account transactions evaluated by the model.</p>
+          </div>
+          <span class="demo-env-badge" style="display: flex; align-items: center; gap: 6px;">
+            <span class="dot-green"></span> STREAM ACTIVE (48 ms)
+          </span>
+        </div>
+
+        <div class="panel-box" style="margin-bottom: 24px;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>TIME</th>
+                <th>TX ID</th>
+                <th>ACCOUNT</th>
+                <th>DESTINATION</th>
+                <th>AMOUNT</th>
+                <th>INFERENCE</th>
+                <th>DECISION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: var(--text-muted); font-size: 0.78rem;">Just now</td>
+                <td style="font-weight: 700;">TX-104</td>
+                <td>Govind Rao (EG-902)</td>
+                <td>QuickGrocery Pay</td>
+                <td style="font-weight: 700;">₹640.00</td>
+                <td><span class="pill-tag low">Score: 0.08</span></td>
+                <td><strong style="color: var(--safe-green);">AUTO-APPROVED</strong></td>
+              </tr>
+              <tr>
+                <td style="color: var(--text-muted); font-size: 0.78rem;">2 min ago</td>
+                <td style="font-weight: 700;">TX-103</td>
+                <td>Sita Raman (EG-117)</td>
+                <td>Peer Transfer (UPI)</td>
+                <td style="font-weight: 700;">₹12,600.00</td>
+                <td><span class="pill-tag medium">Score: 0.62</span></td>
+                <td><strong style="color: var(--alert-yellow);">CHALLENGE SENT</strong></td>
+              </tr>
+              <tr>
+                <td style="color: var(--text-muted); font-size: 0.78rem;">5 min ago</td>
+                <td style="font-weight: 700;">TX-102</td>
+                <td>K. Venkat (EG-208)</td>
+                <td>Unknown Crypto Wallet</td>
+                <td style="font-weight: 700;">₹48,500.00</td>
+                <td><span class="pill-tag high">Score: 0.94</span></td>
+                <td><strong style="color: var(--alert-red);">INTERCEPTED</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= 03: TRANSACTIONS ================= -->
+      <div class="content-body tab-section" id="view-transactions">
+        <div class="section-eyebrow">RECORDS</div>
+        <div class="header-row">
+          <div>
+            <h1>Transaction History</h1>
+            <p>Historical audit of customer payment activity and verified resolutions.</p>
+          </div>
+          <button class="btn-outline">Export CSV</button>
+        </div>
+
+        <div class="panel-box">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>REFERENCE</th>
+                <th>TIMESTAMP</th>
+                <th>CUSTOMER</th>
+                <th>AMOUNT</th>
+                <th>RISK LEVEL</th>
+                <th>FINAL STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 700;">TX-101</td>
+                <td>14 Oct 2026, 14:22</td>
+                <td>CUST-104 (Laxmi Bai)</td>
+                <td style="font-weight: 700;">₹1,850.00</td>
+                <td><span class="pill-tag low">Low</span></td>
+                <td><span class="status-text-app">Settled</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">TX-102</td>
+                <td>14 Oct 2026, 15:40</td>
+                <td>CUST-208 (R. Narayanan)</td>
+                <td style="font-weight: 700;">₹48,500.00</td>
+                <td><span class="pill-tag high">High</span></td>
+                <td><span class="status-text-hold">Frozen / Reviewing</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">TX-103</td>
+                <td>14 Oct 2026, 16:15</td>
+                <td>CUST-117 (Arun Gupta)</td>
+                <td style="font-weight: 700;">₹12,600.00</td>
+                <td><span class="pill-tag medium">Medium</span></td>
+                <td><span class="status-text-rev">OTP Verified</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= 04: NEW TRANSACTION (Simulator) ================= -->
+      <div class="content-body tab-section" id="view-new-transaction">
+        <div class="section-eyebrow">DEMO ENGINE</div>
+        <div class="header-row">
+          <div>
+            <h1>Transaction Simulator</h1>
+            <p>Submit a demo transaction to the Flask API and review the decision returned by the backend. No real money is transferred.</p>
+          </div>
+          <span class="demo-env-badge">SAFE SIMULATION</span>
+        </div>
+
+        <div class="sim-grid">
+          <div class="panel-box">
+            <h3 style="margin-bottom: 14px;">Choose a test scenario</h3>
+            <div class="scenario-picker-box">
+              <label class="scenario-label active">
+                <input type="radio" name="simScenario" value="normal" checked>
+                <div>
+                  <div class="scenario-name">Normal transfer</div>
+                  <div class="scenario-sub">Routine utility bill or regular groceries</div>
+                </div>
+              </label>
+
+              <label class="scenario-label">
+                <input type="radio" name="simScenario" value="new_payee">
+                <div>
+                  <div class="scenario-name">Transfer to a new payee</div>
+                  <div class="scenario-sub">First transfer to unverified individual</div>
+                </div>
+              </label>
+
+              <label class="scenario-label">
+                <input type="radio" name="simScenario" value="suspicious">
+                <div>
+                  <div class="scenario-name">Multiple suspicious signals</div>
+                  <div class="scenario-sub">Velocity burst, high amount, unknown device</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="sim-inputs" style="display:grid;gap:12px;margin:18px 0;">
+              <label style="display:block;font-size:13px;font-weight:700;">
+                Customer ID
+                <input id="simCustomerId" type="number" min="1" step="1" value="101" required
+                  style="display:block;width:100%;box-sizing:border-box;padding:11px;margin-top:6px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-card);color:var(--text-main);">
+              </label>
+              <label style="display:block;font-size:13px;font-weight:700;">
+                Transaction amount (₹)
+                <input id="simAmount" type="number" min="0.01" step="0.01" value="2500" required
+                  style="display:block;width:100%;box-sizing:border-box;padding:11px;margin-top:6px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-card);color:var(--text-main);">
+              </label>
+              <label style="display:block;font-size:13px;font-weight:700;">
+                Recipient name
+                <input id="simRecipient" type="text" maxlength="120" value="Local Grocery" required
+                  style="display:block;width:100%;box-sizing:border-box;padding:11px;margin-top:6px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-card);color:var(--text-main);">
+              </label>
+              <p style="font-size:12px;color:var(--text-muted);margin:0;">Demo only. This submits a simulated assessment; it does not initiate a bank transfer.</p>
+            </div>
+            <button class="btn-assess" id="btnRunScenario" style="width: 100%; justify-content: center;">Assess with Backend</button>
+          </div>
+
+          <div class="panel-box">
+            <h3 style="margin-bottom: 14px;">Transaction evaluation</h3>
+
+            <div class="eval-row-grid">
+              <div class="eval-spec">
+                <div class="lbl">Transfer amount</div>
+                <div class="val" id="valAmt">₹2,500</div>
+              </div>
+              <div class="eval-spec">
+                <div class="lbl">Backend risk level</div>
+                <div class="val" id="valRisk" style="color: var(--safe-green);">Low</div>
+              </div>
+              <div class="eval-spec">
+                <div class="lbl">Payee</div>
+                <div class="val" id="valPayee">Known merchant</div>
+              </div>
+              <div class="eval-spec">
+                <div class="lbl">Transfer velocity</div>
+                <div class="val" id="valVel">Normal</div>
+              </div>
+            </div>
+
+            <div class="decision-callout approve" id="decisionBox">
+              <div class="dec-title">Backend recommendation</div>
+              <div class="dec-status" id="valDecision">APPROVE</div>
+              <div class="dec-reason" id="valReason">No significant anomaly detected.</div>
+            </div>
+            <div class="panel-box" id="backendAssessmentResult" role="status" aria-live="polite" style="display:none;margin-top:16px;overflow-wrap:anywhere;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 05: REVIEW QUEUE ================= -->
+      <div class="content-body tab-section" id="view-review-queue">
+        <div class="section-eyebrow">INVESTIGATION DESK</div>
+        <div class="header-row">
+          <div>
+            <h1>Fraud Review Queue</h1>
+            <p>Intervention queue for payments requiring human staff confirmation before release.</p>
+          </div>
+          <span class="demo-env-badge" id="reviewBadge">1 PENDING REVIEW</span>
+        </div>
+
+        <div class="panel-box">
+          <div class="panel-head">
+            <div>
+              <h3>Investigation Case #Q-2081</h3>
+              <p>Senior Customer: R. Narayanan (Age: 73) • Flagged for high velocity anomaly</p>
+            </div>
+            <span class="pill-tag high">Risk: 0.94 (Critical)</span>
+          </div>
+
+          <div class="grid-2" style="margin: 18px 0;">
+            <div class="eval-spec">
+              <div class="lbl">Attempted Transfer</div>
+              <div class="val" style="color: var(--alert-red);">₹48,500.00</div>
+              <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">Destination: Unregistered Beneficiary (Mule Pattern)</p>
+            </div>
+            <div class="eval-spec">
+              <div class="lbl">Vulnerability Indicators</div>
+              <div class="val" style="font-size: 0.95rem; color: var(--text-main);">Remote Access Call Active</div>
+              <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">AnyDesk / TeamViewer signature detected during checkout</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; justify-content: flex-end;">
+            <button class="btn-outline btn-danger-outline" id="btnFreezeQueue">Cancel Transfer & Freeze</button>
+            <button class="btn-outline" id="btnGuardianCallback">Trigger Guardian Callback</button>
+            <button class="btn-assess" id="btnApproveOverride">Approve (Override Risk)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 06: SECURITY ALERTS ================= -->
+      <div class="content-body tab-section" id="view-security-alerts">
+        <div class="section-eyebrow">TRIAGE</div>
+        <div class="header-row">
+          <div>
+            <h1>Active Security Alerts</h1>
+            <p>High-risk triggers requiring immediate supervisor intervention.</p>
+          </div>
+          <span class="demo-env-badge" style="color: var(--alert-red);">2 UNRESOLVED</span>
+        </div>
+
+        <div class="alerts-list">
+          <div class="alert-card-item">
+            <div class="alert-icon-sq sq-red">!</div>
+            <div class="alert-content">
+              <div class="alert-line-1">
+                <span class="alert-title-text">Critical Exploitation Alert • CUST-208</span>
+                <span class="alert-amount-text">₹48,500.00</span>
+              </div>
+              <div class="alert-subtext">Senior citizen transfer to newly added beneficiary within 3 minutes of account login. Known coercive scam signature.</div>
+            </div>
+          </div>
+
+          <div class="alert-card-item">
+            <div class="alert-icon-sq sq-yellow">△</div>
+            <div class="alert-content">
+              <div class="alert-line-1">
+                <span class="alert-title-text">Behavioral Anomaly • CUST-117</span>
+                <span class="alert-amount-text">₹12,600.00</span>
+              </div>
+              <div class="alert-subtext">Transfer initiated at 02:40 AM outside customer's habitual activity hours. Voice biometric challenge recommended.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 07: CUSTOMERS ================= -->
+      <div class="content-body tab-section" id="view-customers">
+        <div class="section-eyebrow">ACCOUNTS</div>
+        <div class="header-row">
+          <div>
+            <h1>ElderGuard Protected Accounts</h1>
+            <p>Registered senior account profiles with continuous baseline activity tracking.</p>
+          </div>
+          <button class="btn-assess" id="btnRegisterCustomer">+ Register Senior Account</button>
+        </div>
+
+        <div class="panel-box">
+          <table class="data-table" id="customersTable">
+            <thead>
+              <tr>
+                <th>CUSTOMER</th>
+                <th>AGE</th>
+                <th>DESIGNATED GUARDIAN</th>
+                <th>SAFETY PROFILE</th>
+                <th>ACCOUNT HEALTH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 700;">Laxmi Bai (CUST-104)</td>
+                <td>68</td>
+                <td>Pooja Sharma (Daughter)</td>
+                <td><span class="pill-tag low">Low Volatility</span></td>
+                <td><strong style="color: var(--safe-green);">Healthy</strong></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">R. Narayanan (CUST-208)</td>
+                <td>73</td>
+                <td>Suresh Kumar (Son)</td>
+                <td><span class="pill-tag high">High Exploitation Risk</span></td>
+                <td><strong style="color: var(--alert-red);">Shield Active</strong></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">Arun Gupta (CUST-117)</td>
+                <td>71</td>
+                <td>Sunita Gupta (Spouse)</td>
+                <td><span class="pill-tag medium">Medium Volatility</span></td>
+                <td><strong style="color: var(--alert-yellow);">Monitoring</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= 08: ANALYTICS ================= -->
+      <div class="content-body tab-section" id="view-analytics">
+        <div class="section-eyebrow">INSIGHTS</div>
+        <div class="header-row">
+          <div>
+            <h1>Fraud Prevention Analytics</h1>
+            <p>Risk telemetry, blocked loss volume, and model confidence scores.</p>
+          </div>
+          <span class="demo-env-badge">PAST 30 DAYS</span>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-title">Protected Savings</span>
+            <div class="stat-number" style="color: var(--safe-green);">₹18,45,000</div>
+            <div class="stat-footnote">Zero false-positive disputes</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-title">Avg Latency</span>
+            <div class="stat-number">42 ms</div>
+            <div class="stat-footnote">Real-time edge evaluation</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-title">Model Precision</span>
+            <div class="stat-number" style="color: var(--accent-blue);">99.2%</div>
+            <div class="stat-footnote">Elder behavior pattern model</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 09: AUDIT LOGS ================= -->
+      <div class="content-body tab-section" id="view-audit-logs">
+        <div class="section-eyebrow">COMPLIANCE</div>
+        <div class="header-row">
+          <div>
+            <h1>System Audit Logs</h1>
+            <p>Immutable decision and supervisor override logs for regulatory reporting.</p>
+          </div>
+          <button class="btn-outline" id="btnDownloadAudit">Download Audit Trail</button>
+        </div>
+
+        <div class="panel-box">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>TIMESTAMP</th>
+                <th>OPERATOR / ENGINE</th>
+                <th>EVENT</th>
+                <th>TARGET REF</th>
+                <th>HASH VERIFICATION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>14 Oct 2026, 16:15:02</td>
+                <td>ElderGuard-Engine-v2</td>
+                <td>CHALLENGE_ISSUED</td>
+                <td>TX-103</td>
+                <td style="font-family: monospace; color: var(--text-muted);">8f2a...c014</td>
+              </tr>
+              <tr>
+                <td>14 Oct 2026, 15:40:48</td>
+                <td>RuleEngine-Vulnerability</td>
+                <td>AUTO_HOLD_TRANSACTION</td>
+                <td>TX-102</td>
+                <td style="font-family: monospace; color: var(--text-muted);">4e99...1bfa</td>
+              </tr>
+              <tr>
+                <td>14 Oct 2026, 14:22:10</td>
+                <td>ElderGuard-Engine-v2</td>
+                <td>TRANSACTION_APPROVED</td>
+                <td>TX-101</td>
+                <td style="font-family: monospace; color: var(--text-muted);">7c01...8811</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= 10: SETTINGS ================= -->
+      <div class="content-body tab-section" id="view-settings">
+        <div class="section-eyebrow">CONFIGURATION</div>
+        <div class="header-row">
+          <div>
+            <h1>Security & Demo Settings</h1>
+            <p>Adjust risk scoring thresholds, voice verification fallback, and environment parameters.</p>
+          </div>
+          <button class="btn-assess" id="btnSaveSettings">Save Changes</button>
+        </div>
+
+        <div class="panel-box">
+          <div class="setting-row">
+            <div class="setting-info">
+              <h4>Strict Elder Protection Mode</h4>
+              <p>Automatically triggers secondary verification for any transaction above ₹10,000 to new payees.</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggleStrict" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <h4>Guardian Instant SMS Alerts</h4>
+              <p>Dispatch real-time SMS to registered emergency family guardian whenever risk score exceeds 0.70.</p>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggleSms" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <h4>Anomaly Risk Sensitivity</h4>
+              <p>Tune model aggressiveness for coercion and remote access caller flags.</p>
+            </div>
+            <input type="range" min="1" max="10" value="8" class="range-input" id="sensitivityRange">
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <h4>Demo Presentation Speed</h4>
+              <p>Adjust simulation delay for judging and presentations.</p>
+            </div>
+            <select class="btn-outline" id="speedSelect" style="outline: none;">
+              <option value="0">Instant (0 ms)</option>
+              <option value="400" selected>Realistic (400 ms)</option>
+              <option value="1500">Slow Demonstration (1.5 s)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div>© ElderGuard Z • Banking Security Prototype</div>
+        <div class="footer-api">
+          <span class="dot-green"></span>
+          Safe Session • Verified
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ==========================================
+       3. JAVASCRIPT LOGIC (Interactive)
+  =========================================== -->
+  <script>
+    // Universal Toast Notification
+    function showToast(message, color = "#10b981") {
+      let toast = document.getElementById("app-toast");
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "app-toast";
+        toast.className = "toast-notice";
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};"></span> ${message}`;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3200);
+    }
+
+    // Download text/csv helper
+    function downloadTextFile(filename, content, type = "text/plain") {
+      const blob = new Blob([content], { type });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    // 1. Phone & OTP Logic
+    const phoneInput = document.getElementById('phoneInput');
+    const btnSendOtp = document.getElementById('btnSendOtp');
+    const stepPhone = document.getElementById('step-phone');
+    const stepOtp = document.getElementById('step-otp');
+    const phoneError = document.getElementById('phoneError');
+    const dispEnteredPhone = document.getElementById('dispEnteredPhone');
+    const genOtpCode = document.getElementById('genOtpCode');
+    const btnVerifyOtp = document.getElementById('btnVerifyOtp');
+    const otpError = document.getElementById('otpError');
+    const authOverlay = document.getElementById('auth-overlay');
+    const appRoot = document.getElementById('appRoot');
+
+    let currentMockOtp = "7429";
+
+    btnSendOtp.addEventListener('click', () => {
+      const val = phoneInput.value.trim().replace(/\D/g, '');
+      if (val.length < 10) {
+        phoneError.style.display = 'block';
+        return;
+      }
+      phoneError.style.display = 'none';
+
+      currentMockOtp = Math.floor(1000 + Math.random() * 9000).toString();
+      genOtpCode.textContent = currentMockOtp;
+      dispEnteredPhone.textContent = `+91 ${val.slice(0, 5)} ${val.slice(5)}`;
+
+      stepPhone.classList.remove('active');
+      stepOtp.classList.add('active');
+      const firstOtp = document.getElementById('otp1');
+      if (firstOtp) firstOtp.focus();
+    });
+
+    const otpFields = [
+      document.getElementById('otp1'),
+      document.getElementById('otp2'),
+      document.getElementById('otp3'),
+      document.getElementById('otp4')
+    ].filter(Boolean);
+
+    otpFields.forEach((field, index) => {
+      field.addEventListener('input', (e) => {
+        if (e.target.value.length > 1) {
+          const chars = e.target.value.slice(0, 4).split("");
+          chars.forEach((c, i) => {
+            if (otpFields[i]) otpFields[i].value = c;
+          });
+          otpFields[Math.min(chars.length, 3)].focus();
+          return;
+        }
+
+        if (field.value.length === 1 && index < 3) {
+          otpFields[index + 1].focus();
+        }
+      });
+
+      field.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !field.value && index > 0) {
+          otpFields[index - 1].focus();
+        }
+      });
+    });
+
+    btnVerifyOtp.addEventListener('click', () => {
+      const entered = otpFields.map(f => f.value).join('');
+      if (entered === currentMockOtp) {
+        otpError.style.display = 'none';
+        authOverlay.style.display = 'none';
+        appRoot.classList.add('unlocked');
+        showToast("Authenticated successfully. Safe session verified.", "#10b981");
+      } else {
+        otpError.style.display = 'block';
+      }
+    });
+
+    // 2. Tab Navigation
+    const menuButtons = document.querySelectorAll('.menu-item');
+    const allTabSections = document.querySelectorAll('.tab-section');
+    const breadcrumb = document.getElementById('topBreadcrumb');
+
+    function switchTab(tabName, title) {
+      menuButtons.forEach(btn => {
+        if (btn.dataset.tab === tabName) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+
+      if (breadcrumb) {
+        breadcrumb.textContent = title || tabName.replace("-", " ").toUpperCase();
+      }
+
+      allTabSections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      const targetSection = document.getElementById(`view-${tabName}`);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+    }
+
+    menuButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        const text = btn.innerText.trim().replace(/\d+$/, '').trim();
+        switchTab(tab, text);
+      });
+    });
+
+    // 3. Transaction Simulator — uses the real Flask API response
+    const API_BASE_URL = "http://127.0.0.1:5000";
+    const scenarioPresets = {
+      normal: { customer_id: 101, amount: 2500, recipient: "Local Grocery" },
+      new_payee: { customer_id: 101, amount: 18000, recipient: "New Recipient" },
+      suspicious: { customer_id: 101, amount: 48500, recipient: "Suspicious Recipient" }
+    };
+    const scenarioLabels = document.querySelectorAll('.scenario-label');
+    const scenarioButton = document.getElementById('btnRunScenario');
+    const resultPanel = document.getElementById('backendAssessmentResult');
+    let assessmentInProgress = false;
+
+    function selectedScenario() {
+      return document.querySelector('input[name="simScenario"]:checked')?.value || 'normal';
+    }
+
+    function fillScenarioInputs() {
+      const preset = scenarioPresets[selectedScenario()] || scenarioPresets.normal;
+      const customer = document.getElementById('simCustomerId');
+      const amount = document.getElementById('simAmount');
+      const recipient = document.getElementById('simRecipient');
+      if (customer) customer.value = preset.customer_id;
+      if (amount) amount.value = preset.amount;
+      if (recipient) recipient.value = preset.recipient;
+      scenarioLabels.forEach(label => {
+        const radio = label.querySelector('input[name="simScenario"]');
+        label.classList.toggle('active', Boolean(radio && radio.checked));
+      });
+    }
+
+    scenarioLabels.forEach(label => {
+      const radio = label.querySelector('input[name="simScenario"]');
+      if (radio) radio.addEventListener('change', fillScenarioInputs);
+      label.addEventListener('click', () => setTimeout(fillScenarioInputs, 0));
+    });
+
+    function renderBackendAssessment(data) {
+      const panel = document.getElementById('backendAssessmentResult');
+      if (!panel) return;
+      panel.replaceChildren();
+      const heading = document.createElement('h3');
+      heading.textContent = 'Flask Backend Assessment';
+      panel.appendChild(heading);
+
+      const reasons = Array.isArray(data.reasons)
+        ? data.reasons.join('; ')
+        : String(data.reasons || 'No explanation provided.');
+      const rows = [
+        ['Transaction ID', data.transaction_id],
+        ['Customer', data.customer_name || data.customer_id],
+        ['Amount', data.amount == null ? null : '₹' + Number(data.amount).toLocaleString('en-IN')],
+        ['Recipient', data.recipient],
+        ['Risk level', data.risk_level],
+        ['Risk score', data.risk_score],
+        ['Reasons', reasons],
+        ['Recommended action', data.recommended_action],
+        ['Transaction status', data.transaction_status],
+        ['Assessment type', data.assessment_type]
+      ];
+      rows.forEach(([label, value]) => {
+        if (value === undefined || value === null || value === '') return;
+        const row = document.createElement('p');
+        row.style.cssText = 'margin:10px 0 0;line-height:1.5;overflow-wrap:anywhere;';
+        const strong = document.createElement('strong');
+        strong.textContent = label + ': ';
+        const span = document.createElement('span');
+        span.textContent = String(value);
+        row.append(strong, span);
+        panel.appendChild(row);
+      });
+      panel.style.display = 'block';
+
+      const amountField = document.getElementById('valAmt');
+      const riskField = document.getElementById('valRisk');
+      const payeeField = document.getElementById('valPayee');
+      const velocityField = document.getElementById('valVel');
+      const decisionField = document.getElementById('valDecision');
+      const reasonField = document.getElementById('valReason');
+      const decisionBox = document.getElementById('decisionBox');
+      const level = String(data.risk_level || '').toLowerCase();
+      const action = String(data.recommended_action || '').toLowerCase();
+
+      if (amountField && data.amount != null) amountField.textContent = '₹' + Number(data.amount).toLocaleString('en-IN');
+      if (riskField && data.risk_level != null) {
+        riskField.textContent = String(data.risk_level);
+        riskField.style.color = level === 'high' ? '#ef4444' : level === 'medium' ? '#d97706' : '#059669';
+      }
+      if (payeeField) payeeField.textContent = String(data.recipient || 'Not provided');
+      if (velocityField) velocityField.textContent = data.is_new_recipient === true ? 'New recipient' : 'Assessed by backend';
+      if (decisionField) decisionField.textContent = String(data.recommended_action || 'No recommendation');
+      if (reasonField) reasonField.textContent = reasons;
+      if (decisionBox) {
+        const statusClass = level === 'high' || action.includes('block') || action.includes('hold')
+          ? 'block'
+          : level === 'medium' || action.includes('verify') || action.includes('review')
+            ? 'challenge' : 'approve';
+        decisionBox.className = 'decision-callout ' + statusClass;
+      }
+    }
+
+    if (scenarioButton) {
+      scenarioButton.addEventListener('click', async () => {
+        if (assessmentInProgress) return;
+        const customerId = Number(document.getElementById('simCustomerId')?.value);
+        const amount = Number(document.getElementById('simAmount')?.value);
+        const recipient = (document.getElementById('simRecipient')?.value || '').trim();
+
+        if (!Number.isInteger(customerId) || customerId <= 0) {
+          showToast('Enter a valid customer ID.', '#ef4444'); return;
+        }
+        if (!Number.isFinite(amount) || amount <= 0) {
+          showToast('Enter an amount greater than zero.', '#ef4444'); return;
+        }
+        if (!recipient) {
+          showToast('Enter a recipient name.', '#ef4444'); return;
+        }
+
+        assessmentInProgress = true;
+        scenarioButton.disabled = true;
+        scenarioButton.textContent = 'Assessing...';
+        if (resultPanel) {
+          resultPanel.style.display = 'block';
+          resultPanel.textContent = 'Waiting for the Flask backend...';
+        }
+
+        try {
+          const response = await fetch(`${API_BASE_URL}/api/transactions/assess`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ customer_id: customerId, amount, recipient })
+          });
+          const raw = await response.text();
+          let data;
+          try { data = raw ? JSON.parse(raw) : {}; }
+          catch { throw new Error('The API did not return JSON. Check the Flask endpoint.'); }
+          if (!response.ok) throw new Error(data.error || data.message || `Request failed (${response.status}).`);
+          if (!data || typeof data !== 'object' || data.risk_level == null || data.recommended_action == null) {
+            throw new Error('Backend response must include risk_level and recommended_action.');
+          }
+          renderBackendAssessment(data);
+          showToast('Assessment received from Flask.', '#059669');
+        } catch (error) {
+          if (resultPanel) {
+            resultPanel.replaceChildren();
+            const heading = document.createElement('h3');
+            heading.textContent = 'Backend assessment unavailable';
+            const message = document.createElement('p');
+            message.textContent = `Could not assess this transaction. Confirm Flask is running at ${API_BASE_URL}, then check that /api/transactions/assess is available. ${error.message}`;
+            resultPanel.append(heading, message);
+            resultPanel.style.display = 'block';
+          }
+          showToast('Backend assessment failed.', '#ef4444');
+          console.error('Assessment request failed:', error);
+        } finally {
+          assessmentInProgress = false;
+          scenarioButton.disabled = false;
+          scenarioButton.textContent = 'Assess with Backend';
+        }
+      });
+    }
+
+    // 4. Review Queue Operations
+    const btnFreezeQueue = document.getElementById('btnFreezeQueue');
+    const btnGuardianCallback = document.getElementById('btnGuardianCallback');
+    const btnApproveOverride = document.getElementById('btnApproveOverride');
+
+    if (btnFreezeQueue) {
+      btnFreezeQueue.addEventListener('click', () => {
+        btnFreezeQueue.disabled = true;
+        btnFreezeQueue.textContent = "✓ Frozen & Blocked";
+        btnFreezeQueue.style.background = "var(--alert-red-bg)";
+        showToast("Case Q-2081 frozen. Recipient placed on permanent fraud block.", "#ef4444");
+      });
+    }
+
+    if (btnGuardianCallback) {
+      btnGuardianCallback.addEventListener('click', () => {
+        btnGuardianCallback.textContent = "✓ Callback Triggered";
+        showToast("Automated family callback scheduled to Suresh Kumar.", "#0284c7");
+      });
+    }
+
+    if (btnApproveOverride) {
+      btnApproveOverride.addEventListener('click', () => {
+        if (confirm("Confirm supervisor override for transfer ₹48,500.00?")) {
+          btnApproveOverride.disabled = true;
+          btnApproveOverride.textContent = "✓ Override Approved";
+          showToast("Override confirmed. Transfer queued for settlement.", "#059669");
+        }
+      });
+    }
+
+    // 5. Export CSV & Download Audit Log
+    const exportCsvBtn = document.querySelector("#view-transactions .btn-outline");
+    if (exportCsvBtn) {
+      exportCsvBtn.addEventListener('click', () => {
+        const csvContent =
+          "REFERENCE,TIMESTAMP,CUSTOMER,AMOUNT,RISK LEVEL,FINAL STATUS\n" +
+          "TX-101,14 Oct 2026 14:22,CUST-104 (Laxmi Bai),₹1850.00,Low,Settled\n" +
+          "TX-102,14 Oct 2026 15:40,CUST-208 (R. Narayanan),₹48500.00,High,Frozen / Reviewing\n" +
+          "TX-103,14 Oct 2026 16:15,CUST-117 (Arun Gupta),₹12600.00,Medium,OTP Verified\n";
+        downloadTextFile("elderguard_transactions.csv", csvContent, "text/csv");
+        showToast("Transactions CSV downloaded.");
+      });
+    }
+
+    const btnDownloadAudit = document.getElementById('btnDownloadAudit');
+    if (btnDownloadAudit) {
+      btnDownloadAudit.addEventListener('click', () => {
+        const logContent =
+          "=== ELDERGUARD Z REGULATORY AUDIT LOG ===\n" +
+          "Export Date: " + new Date().toISOString() + "\n\n" +
+          "[2026-10-14 16:15:02] Engine: ElderGuard-Engine-v2 | Ref: TX-103 | Event: CHALLENGE_ISSUED | Hash: 8f2a...c014\n" +
+          "[2026-10-14 15:40:48] Engine: RuleEngine-Vulnerability | Ref: TX-102 | Event: AUTO_HOLD_TRANSACTION | Hash: 4e99...1bfa\n" +
+          "[2026-10-14 14:22:10] Engine: ElderGuard-Engine-v2 | Ref: TX-101 | Event: TRANSACTION_APPROVED | Hash: 7c01...8811\n";
+        downloadTextFile("audit_trail_immutable.log", logContent, "text/plain");
+        showToast("Immutable audit trail downloaded.");
+      });
+    }
+
+    // 6. Register Customer Prompt
+    const btnRegisterCustomer = document.getElementById('btnRegisterCustomer');
+    if (btnRegisterCustomer) {
+      btnRegisterCustomer.addEventListener('click', () => {
+        const name = prompt("Enter Senior Customer Full Name:", "Kamla Devi");
+        if (!name) return;
+        const age = prompt("Enter Age:", "74");
+        const guardian = prompt("Enter Designated Guardian Name & Relationship:", "Rakesh Devi (Son)");
+
+        const tableBody = document.querySelector('#customersTable tbody');
+        if (tableBody) {
+          const newRow = document.createElement('tr');
+          const custId = "CUST-" + Math.floor(100 + Math.random() * 900);
+          newRow.innerHTML = `
+            <td style="font-weight: 700;">${name} (${custId})</td>
+            <td>${age || "70"}</td>
+            <td>${guardian || "Designated Nominee"}</td>
+            <td><span class="pill-tag low">Protected Baseline</span></td>
+            <td><strong style="color: var(--safe-green);">Healthy</strong></td>
+          `;
+          tableBody.prepend(newRow);
+          showToast(`Registered account profile for ${name} (${custId}).`);
+        }
+      });
+    }
+
+    // 7. Settings Actions & Sensitivity Feedback
+    const btnSaveSettings = document.getElementById('btnSaveSettings');
+    if (btnSaveSettings) {
+      btnSaveSettings.addEventListener('click', () => {
+        btnSaveSettings.textContent = "Saved ✓";
+        showToast("Security policies and thresholds updated successfully.");
+        setTimeout(() => {
+          btnSaveSettings.textContent = "Save Changes";
+        }, 2000);
+      });
+    }
+
+    const sensitivityRange = document.getElementById('sensitivityRange');
+    if (sensitivityRange) {
+      sensitivityRange.addEventListener('input', (e) => {
+        showToast(`Anomaly sensitivity set to: ${e.target.value} / 10`, "#0284c7");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1001 @@
+user_id,amount,recipient_type,recent_transfers,transaction_number,previous_average,anomaly,behaviour_anomaly,risk_level,explanation,suggested_action
+101,757,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,991,new,1,2,757.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,1822,known,3,3,874.0,1,1,Low,Amount is much higher than previous average,Allow transaction; continue monitoring
+101,767,known,1,4,1190.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,1938,known,3,5,1084.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,2036,new,3,6,1255.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,1625,new,2,7,1385.1666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,719,known,3,8,1419.4285714285713,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,1275,known,1,9,1331.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+101,1395,known,1,10,1325.5555555555557,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,3128,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,4708,known,3,2,3128.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,3270,known,3,3,3918.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,4294,new,2,4,3702.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,4605,known,1,5,3850.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,4886,known,1,6,4001.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,2133,known,2,7,4148.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,5136,known,1,8,3860.5714285714284,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,2578,new,2,9,4020.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+102,4519,new,1,10,3859.777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,2043,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,1727,known,3,2,2043.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,1399,new,2,3,1885.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,2539,known,1,4,1723.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,2598,known,2,5,1927.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,1382,new,3,6,2061.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,2292,known,2,7,1948.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,2266,known,1,8,1997.142857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,1455,new,3,9,2030.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+103,2479,new,2,10,1966.7777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,3367,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,2257,known,1,2,3367.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,2540,new,2,3,2812.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,3461,known,3,4,2721.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,4052,known,3,5,2906.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,1932,new,3,6,3135.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,5509,new,2,7,2934.8333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,3278,known,2,8,3302.5714285714284,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,3743,known,3,9,3299.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+104,2963,new,1,10,3348.777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1965,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1092,known,2,2,1965.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1789,new,1,3,1528.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1685,known,1,4,1615.3333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1314,known,1,5,1632.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1846,known,1,6,1569.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,826,new,1,7,1615.1666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1658,new,1,8,1502.4285714285713,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1927,known,1,9,1521.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+105,1096,new,2,10,1566.888888888889,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+106,3573,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+106,32031,new,5,2,3573.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+106,35590,new,4,3,17802.0,-1,0,Low,Payment is made to a new recipient; Multiple recent transfers,Allow transaction; continue monitoring
+106,2716,known,1,4,23731.333333333332,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+106,2069,new,1,5,18477.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+106,3767,known,3,6,15195.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+106,4117,new,2,7,13291.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+106,35590,new,7,8,11980.42857142857,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+106,3230,known,2,9,14931.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+106,4765,known,3,10,13631.444444444445,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,777,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,876,known,1,2,777.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,1571,known,2,3,826.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,1600,known,1,4,1074.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,1780,known,1,5,1206.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,1760,known,1,6,1320.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,1137,known,2,7,1394.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,1090,known,1,8,1357.2857142857142,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,657,known,2,9,1323.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+107,1584,known,2,10,1249.7777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,3511,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,2722,new,3,2,3511.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,4812,known,1,3,3116.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,40374,new,4,4,3681.6666666666665,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+108,26916,new,7,5,12854.75,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+108,3225,new,1,6,15667.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,2568,new,1,7,13593.333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,6525,known,2,8,12018.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,4816,known,2,9,11331.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+108,4700,known,2,10,10607.666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,566,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,751,known,3,2,566.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,1090,known,2,3,658.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,1047,known,2,4,802.3333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,1166,new,3,5,863.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,1160,new,1,6,924.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,822,known,1,7,963.3333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,865,known,2,8,943.1428571428571,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,1249,known,3,9,933.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+109,1087,new,2,10,968.4444444444445,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,552,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,503,known,2,2,552.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,1110,known,1,3,527.5,1,1,Low,Amount is much higher than previous average,Allow transaction; continue monitoring
+110,1022,new,2,4,721.6666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,572,known,3,5,796.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,1016,known,2,6,751.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,6412,new,4,7,795.8333333333334,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+110,824,known,3,8,1598.142857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,563,known,3,9,1501.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+110,874,new,3,10,1397.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,24390,new,6,1,0.0,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+111,2905,new,3,2,24390.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,2311,known,3,3,13647.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,1377,known,1,4,9868.666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,3104,known,2,5,7745.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,2151,known,1,6,6817.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,2851,known,2,7,6039.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,2362,known,3,8,5584.142857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,3415,known,1,9,5181.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+111,2288,known,3,10,4985.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,1493,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,2621,known,3,2,1493.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,1810,known,3,3,2057.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,24066,new,5,4,1974.6666666666667,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+112,2828,known,1,5,7497.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,2689,new,2,6,6563.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,1847,new,2,7,5917.833333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,3009,known,2,8,5336.285714285715,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,3607,known,1,9,5045.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+112,2889,new,3,10,4885.555555555556,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,3145,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,2342,known,3,2,3145.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,2801,known,2,3,2743.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,2357,new,2,4,2762.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,2177,new,1,5,2661.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,4201,new,3,6,2564.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,2444,new,2,7,2837.1666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,23720,new,4,8,2781.0,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+113,3347,known,3,9,5398.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+113,4424,new,2,10,5170.444444444444,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,12490,new,7,1,0.0,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+114,2145,known,3,2,12490.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,1454,new,1,3,7317.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,1746,known,1,4,5363.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,3424,new,3,5,4458.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,3061,new,3,6,4251.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,2996,new,2,7,4053.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,3193,known,2,8,3902.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,2384,new,2,9,3813.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+114,2373,known,1,10,3654.777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+115,2322,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+115,1540,known,1,2,2322.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+115,19360,new,6,3,1931.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+115,19360,new,7,4,7740.666666666667,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+115,3602,new,1,5,10645.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+115,16940,new,6,6,9236.8,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+115,2807,known,3,7,10520.666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+115,3446,new,1,8,9418.714285714286,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+115,16940,new,7,9,8672.125,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+115,1886,known,1,10,9590.777777777777,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,2657,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,2659,known,3,2,2657.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,6219,known,1,3,2658.0,1,1,Low,Amount is much higher than previous average,Allow transaction; continue monitoring
+116,5118,known,2,4,3845.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,5542,known,2,5,4163.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,3107,known,1,6,4439.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,2863,known,1,7,4217.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,2766,known,1,8,4023.5714285714284,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,2603,new,1,9,3866.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+116,6316,new,1,10,3726.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,3046,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,1829,new,3,2,3046.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,1611,known,2,3,2437.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,1247,known,3,4,2162.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,2679,known,3,5,1933.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,2136,known,3,6,2082.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,1637,new,1,7,2091.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,22850,new,6,8,2026.4285714285713,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+117,1193,known,2,9,4629.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+117,2625,new,2,10,4247.555555555556,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,2754,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,3139,new,3,2,2754.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,3937,known,3,3,2946.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,3353,known,1,4,3276.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,3879,known,2,5,3295.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,28469,new,5,6,3412.4,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+118,4030,known,2,7,7588.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,3427,known,3,8,7080.142857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,3164,new,1,9,6623.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+118,2815,known,1,10,6239.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,4219,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,27012,new,7,2,4219.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+119,4244,known,3,3,15615.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,6127,new,3,4,11825.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,4960,known,3,5,10400.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,4762,known,1,6,9312.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,3828,known,1,7,8554.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,3767,known,1,8,7878.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,4516,new,3,9,7364.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+119,6548,new,2,10,7048.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,2258,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,1102,new,3,2,2258.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,1231,known,3,3,1680.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,1562,new,2,4,1530.3333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,1095,new,2,5,1538.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,2849,known,1,6,1449.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,2079,known,1,7,1682.8333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,2686,known,1,8,1739.4285714285713,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,1264,known,1,9,1857.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+120,2289,known,1,10,1791.7777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,4437,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,4094,known,2,2,4437.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,3171,new,2,3,4265.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,4497,known,3,4,3900.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,2360,known,3,5,4049.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,4659,known,1,6,3711.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,31272,new,7,7,3869.6666666666665,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+121,3146,known,1,8,7784.285714285715,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+121,23454,new,6,9,7204.5,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+121,5180,new,3,10,9010.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,2801,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,12720,new,6,2,2801.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+122,2242,known,1,3,7760.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,2305,new,2,4,5921.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,3109,new,2,5,5017.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,1223,known,3,6,4635.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,2085,known,1,7,4066.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,1144,new,2,8,3783.5714285714284,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,1777,known,3,9,3453.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+122,2199,known,3,10,3267.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,3011,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,4894,new,1,2,3011.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,4965,known,3,3,3952.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,5544,new,1,4,4290.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,4840,known,2,5,4603.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,5575,new,1,6,4650.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,40752,new,6,7,4804.833333333333,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+123,6347,new,2,8,9940.142857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,3931,known,3,9,9491.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+123,4623,known,3,10,8873.222222222223,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,1013,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,686,new,1,2,1013.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,463,known,1,3,849.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,488,new,1,4,720.6666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,1101,known,3,5,662.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,793,known,2,6,750.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,932,known,2,7,757.3333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,981,new,3,8,782.2857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,439,known,2,9,807.125,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+124,887,known,1,10,766.2222222222222,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,3876,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,2080,known,3,2,3876.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,2833,new,3,3,2978.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,2790,known,3,4,2929.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,29450,new,7,5,2894.75,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+125,4360,known,2,6,8205.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,4142,known,2,7,7564.833333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,1989,new,3,8,7075.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,1883,known,1,9,6440.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+125,3343,known,3,10,5933.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,1035,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,12348,new,7,2,1035.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+126,1530,new,3,3,6691.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,1881,new,1,4,4971.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,1362,new,3,5,4198.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,1347,new,1,6,3631.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,1083,new,3,7,3250.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,1790,known,3,8,2940.8571428571427,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,941,known,2,9,2797.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+126,1482,known,2,10,2590.777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,3425,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,20000,new,5,2,3425.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+127,3288,new,1,3,11712.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,2290,known,2,4,8904.333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,3155,known,3,5,7250.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,1552,known,2,6,6431.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,2475,new,2,7,5618.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,3121,known,1,8,5169.285714285715,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,3229,known,1,9,4913.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+127,2720,new,2,10,4726.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,1548,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,3777,new,3,2,1548.0,1,1,Low,Amount is much higher than previous average; Payment is made to a new recipient,Allow transaction; continue monitoring
+128,3942,new,2,3,2662.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,2631,known,3,4,3089.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,2356,new,1,5,2974.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,4235,new,3,6,2850.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,2019,new,1,7,3081.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,4106,known,2,8,2929.714285714286,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,1595,new,2,9,3076.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+128,1828,known,2,10,2912.1111111111113,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,1380,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,1718,new,3,2,1380.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,2669,known,2,3,1549.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,2902,known,2,4,1922.3333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,1662,known,2,5,2167.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,1257,known,3,6,2066.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,15504,new,4,7,1931.3333333333333,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+129,1510,new,1,8,3870.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,2346,new,3,9,3575.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+129,1749,new,2,10,3438.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,3138,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,3506,known,3,2,3138.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,1465,new,2,3,3322.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,2444,new,2,4,2703.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,1392,known,2,5,2638.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,1682,known,1,6,2389.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,1762,known,2,7,2271.1666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,3419,known,3,8,2198.4285714285716,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+130,19320,new,7,9,2351.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+130,2352,known,3,10,4236.444444444444,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,41320,new,6,1,0.0,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+131,5004,known,2,2,41320.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,3066,known,1,3,23162.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,2240,known,2,4,16463.333333333332,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,37188,new,5,5,12907.5,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+131,3835,known,2,6,17763.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,2089,known,1,7,15442.166666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,4119,known,1,8,13534.57142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,2277,known,1,9,12357.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+131,28924,new,4,10,11237.555555555555,-1,1,Low,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Allow transaction; continue monitoring
+132,2288,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,899,known,2,2,2288.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,1820,new,1,3,1593.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,1222,new,1,4,1669.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,2118,new,2,5,1557.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,832,known,2,6,1669.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,1642,new,1,7,1529.8333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,1677,known,1,8,1545.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,1072,known,1,9,1562.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+132,2065,new,3,10,1507.7777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,4256,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,4289,known,1,2,4256.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,2278,new,3,3,4272.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,4068,new,1,4,3607.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,2745,known,2,5,3722.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,28960,new,6,6,3527.2,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+133,4534,known,2,7,7766.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,18100,new,4,8,7304.285714285715,-1,1,Low,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Allow transaction; continue monitoring
+133,3578,known,3,9,8653.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+133,32580,new,6,10,8089.777777777777,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+134,1591,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,1616,new,1,2,1591.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,1979,known,2,3,1603.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,1789,known,1,4,1728.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,1209,known,2,5,1743.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,1502,known,2,6,1636.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,1628,new,3,7,1614.3333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,2066,new,1,8,1616.2857142857142,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+134,10507,new,6,9,1672.5,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+134,1445,known,1,10,2654.1111111111113,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,16730,new,4,1,0.0,-1,0,Low,Payment is made to a new recipient; Multiple recent transfers,Allow transaction; continue monitoring
+135,1023,new,3,2,16730.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,1695,known,2,3,8876.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,1474,new,2,4,6482.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,1998,new,1,5,5230.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,8365,new,6,6,4584.0,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+135,1743,new,2,7,5214.166666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,1741,known,2,8,4718.285714285715,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,1885,known,2,9,4346.125,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+135,1416,new,3,10,4072.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,4934,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,2856,known,1,2,4934.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,4138,known,2,3,3895.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,3390,known,2,4,3976.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,3847,known,2,5,3829.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,4293,new,3,6,3833.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,5309,known,2,7,3909.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,2754,known,1,8,4109.571428571428,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,3045,known,3,9,3940.125,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+136,5721,new,3,10,3840.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,1550,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,1986,known,3,2,1550.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,901,known,1,3,1768.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,10101,new,6,4,1479.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+137,14430,new,4,5,3634.5,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+137,1807,new,1,6,5793.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,1436,known,3,7,5129.166666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,2042,known,1,8,4601.571428571428,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,1245,known,1,9,4281.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+137,2063,known,1,10,3944.222222222222,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,6073,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,4920,new,2,2,6073.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,2832,known,2,3,5496.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,4523,new,1,4,4608.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,2880,known,2,5,4587.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,22735,new,7,6,4245.6,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+138,6063,new,3,7,7327.166666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,2609,known,3,8,7146.571428571428,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,4906,new,2,9,6579.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+138,2779,known,1,10,6393.444444444444,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,4581,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,1816,known,3,2,4581.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,3455,new,3,3,3198.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,3146,known,2,4,3284.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,4828,known,3,5,3249.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,4888,new,3,6,3565.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,3006,known,3,7,3785.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,2819,known,3,8,3674.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+139,33130,new,5,9,3567.375,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+139,3088,known,3,10,6852.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,2383,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,3123,new,2,2,2383.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,3200,known,3,3,2753.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,37100,new,7,4,2902.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+140,3937,known,1,5,11451.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,2593,known,2,6,9948.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,3846,known,1,7,8722.666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,2489,known,2,8,8026.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,2269,new,3,9,7333.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+140,5474,new,1,10,6771.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,2009,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,2204,new,1,2,2009.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,875,known,2,3,2106.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,1272,known,3,4,1696.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,2319,known,1,5,1590.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,1419,known,1,6,1735.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,1954,known,2,7,1683.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,1568,new,3,8,1721.7142857142858,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,1117,known,3,9,1702.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+141,1298,known,3,10,1637.4444444444443,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,4041,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,21240,new,6,2,4041.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+142,3610,new,1,3,12640.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,2145,known,2,4,9630.333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,1879,known,1,5,7759.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,3301,known,2,6,6583.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,3305,known,1,7,6036.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,2175,new,3,8,5645.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,2368,known,1,9,5212.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+142,5168,known,3,10,4896.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+143,5845,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+143,2326,known,1,2,5845.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+143,6494,known,1,3,4085.5,-1,0,Low,Isolation Forest detected an unusual pattern,Allow transaction; continue monitoring
+143,34736,new,7,4,4888.333333333333,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+143,2685,known,2,5,12350.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+143,2305,new,3,6,10417.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+143,30394,new,5,7,9065.166666666666,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+143,5583,known,3,8,12112.142857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+143,6459,known,1,9,11296.0,-1,0,Low,Isolation Forest detected an unusual pattern,Allow transaction; continue monitoring
+143,34736,new,4,10,10758.555555555555,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+144,18345,new,6,1,0.0,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+144,2821,new,3,2,18345.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,4994,new,3,3,10583.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,2380,known,2,4,8720.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,5166,new,1,5,7135.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,4638,known,3,6,6741.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,2580,known,1,7,6390.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,3708,known,2,8,5846.285714285715,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,5074,known,1,9,5579.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+144,3104,new,2,10,5522.888888888889,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,6352,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,4039,known,2,2,6352.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,2865,new,2,3,5195.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,5488,known,2,4,4418.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,5641,known,1,5,4686.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,6549,known,3,6,4877.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,44532,new,5,7,5155.666666666667,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+145,6942,known,2,8,10780.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,5160,new,2,9,10301.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+145,7410,new,2,10,9729.777777777777,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,4947,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,4956,new,2,2,4947.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,2537,known,3,3,4951.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,5044,new,3,4,4146.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,2323,known,3,5,4371.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,41360,new,6,6,3961.4,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+146,24816,new,7,7,10194.5,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+146,5106,known,2,8,12283.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,3195,new,2,9,11386.125,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+146,24816,new,7,10,10476.0,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+147,5540,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,4502,new,2,2,5540.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,4709,new,2,3,5021.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,3481,known,2,4,4917.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,6016,known,3,5,4558.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,4988,new,2,6,4849.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,6875,new,2,7,4872.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,3660,new,3,8,5158.714285714285,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,3796,known,3,9,4971.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+147,4016,known,1,10,4840.777777777777,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,726,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,921,known,3,2,726.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,424,known,2,3,823.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,847,new,2,4,690.3333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,945,known,1,5,729.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,1014,known,2,6,772.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,886,known,1,7,812.8333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,921,new,3,8,823.2857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,489,known,3,9,835.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+148,413,known,3,10,797.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,1255,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,1986,known,1,2,1255.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,2224,new,2,3,1620.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,18480,new,5,4,1821.6666666666667,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+149,2136,new,1,5,5986.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,2202,new,3,6,5216.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,18480,new,6,7,4713.833333333333,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+149,2257,known,3,8,6680.428571428572,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,2232,known,2,9,6127.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+149,2041,known,3,10,5694.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,4234,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,2825,new,1,2,4234.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,5632,known,2,3,3529.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,3404,known,3,4,4230.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,5057,known,1,5,4023.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,6446,new,1,6,4230.4,-1,0,Low,Payment is made to a new recipient,Allow transaction; continue monitoring
+150,6049,known,2,7,4599.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,3382,known,1,8,4806.714285714285,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,5374,new,2,9,4628.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+150,3536,known,3,10,4711.444444444444,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,1679,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,16440,new,7,2,1679.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+151,2013,known,3,3,9059.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,1234,known,2,4,6710.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,10275,new,7,5,5341.5,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+151,1575,known,3,6,6328.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,2678,known,1,7,5536.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,1824,known,3,8,5127.714285714285,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,2609,new,2,9,4714.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+151,2172,new,3,10,4480.777777777777,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,975,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,1471,new,2,2,975.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,1184,new,3,3,1223.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,859,known,1,4,1210.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,1459,known,3,5,1122.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,2018,new,1,6,1189.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,2032,known,1,7,1327.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,2039,new,2,8,1428.2857142857142,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,1815,new,3,9,1504.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+152,1929,known,2,10,1539.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,3114,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,4148,known,3,2,3114.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,4335,known,3,3,3631.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,4443,new,3,4,3865.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,1968,new,2,5,4010.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,4334,new,3,6,3601.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,3315,known,3,7,3723.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,4103,new,1,8,3665.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,3564,known,2,9,3720.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+153,4586,known,2,10,3702.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,2691,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,4843,new,2,2,2691.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,4751,known,2,3,3767.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,4985,new,2,4,4095.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,4346,new,2,5,4317.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,4200,known,3,6,4323.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,4619,known,3,7,4302.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,6186,known,2,8,4347.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,4421,known,1,9,4577.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+154,5291,known,2,10,4560.222222222223,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,1443,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,1010,known,2,2,1443.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,2379,known,1,3,1226.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,1952,known,3,4,1610.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,1130,known,3,5,1696.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,1339,known,1,6,1582.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,1936,known,3,7,1542.1666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,1054,known,2,8,1598.4285714285713,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+155,15291,new,5,9,1530.375,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+155,1682,new,2,10,3059.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,2242,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,1432,new,3,2,2242.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,1218,known,2,3,1837.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,1786,known,2,4,1630.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,1829,new,2,5,1669.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,1103,known,3,6,1701.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,2438,known,2,7,1601.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,3089,known,3,8,1721.142857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,1855,known,2,9,1892.125,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+156,2945,new,2,10,1888.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,652,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,504,known,3,2,652.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,722,known,3,3,578.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,717,new,1,4,626.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,450,known,2,5,648.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,313,known,2,6,609.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,580,known,2,7,559.6666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,893,known,2,8,562.5714285714286,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,548,known,3,9,603.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+157,621,known,2,10,597.6666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,4350,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,2731,known,3,2,4350.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,2070,known,1,3,3540.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,4004,known,2,4,3050.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,3451,new,3,5,3288.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,2536,new,3,6,3321.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,1858,new,2,7,3190.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,3004,known,3,8,3000.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,3766,new,1,9,3000.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+158,2136,known,2,10,3085.5555555555557,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,3011,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,6063,known,3,2,3011.0,1,1,Low,Amount is much higher than previous average,Allow transaction; continue monitoring
+159,2514,known,1,3,4537.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,5801,new,1,4,3862.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,4583,new,1,5,4347.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,2083,new,1,6,4394.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,2430,known,2,7,4009.1666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,32952,new,5,8,3783.5714285714284,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+159,3168,new,3,9,7429.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+159,5502,known,2,10,6956.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,3334,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,5378,new,1,2,3334.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,3220,known,1,3,4356.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,3405,new,1,4,3977.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,2708,known,1,5,3834.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,3692,new,3,6,3609.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,3974,known,1,7,3622.8333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,3213,known,2,8,3673.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+160,35920,new,7,9,3615.5,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+160,4314,known,1,10,7204.888888888889,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,1879,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,10608,new,5,2,1879.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+161,1768,known,1,3,6243.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,1255,known,3,4,4751.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,1845,new,3,5,3877.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,1148,known,1,6,3471.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,1730,known,2,7,3083.8333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,787,new,3,8,2890.4285714285716,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,1021,new,3,9,2627.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+161,1678,known,2,10,2449.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,5029,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,3483,known,2,2,5029.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,4901,new,2,3,4256.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,2734,known,3,4,4471.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,3707,known,3,5,4036.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,3517,new,3,6,3970.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,2805,known,1,7,3895.1666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,36220,new,5,8,3739.4285714285716,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+162,2022,known,2,9,7799.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+162,4280,known,1,10,7157.555555555556,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,3101,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,1200,known,1,2,3101.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,1618,new,2,3,2150.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,1975,known,1,4,1973.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,2297,known,2,5,1973.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,2609,known,2,6,2038.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,3174,known,1,7,2133.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,3061,known,1,8,2282.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,2833,known,3,9,2379.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+163,1735,known,2,10,2429.777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,3169,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,3515,new,1,2,3169.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,4641,new,2,3,3342.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,5325,known,3,4,3775.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,3969,known,1,5,4162.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,3402,known,1,6,4123.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,3960,known,3,7,4003.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,19600,new,4,8,3997.285714285714,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+164,5090,known,2,9,5947.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+164,4543,known,1,10,5852.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,510,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,5166,new,7,2,510.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+165,299,known,3,3,2838.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,835,known,1,4,1991.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,727,known,1,5,1702.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,823,known,1,6,1507.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,826,known,2,7,1393.3333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,693,known,2,8,1312.2857142857142,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,757,new,1,9,1234.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+165,518,known,3,10,1181.7777777777778,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+166,644,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+166,1711,known,1,2,644.0,1,1,Low,Amount is much higher than previous average,Allow transaction; continue monitoring
+166,930,known,2,3,1177.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+166,1258,new,1,4,1095.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+166,667,known,1,5,1135.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+166,5800,new,6,6,1042.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+166,8120,new,4,7,1835.0,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+166,1004,new,1,8,2732.8571428571427,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+166,1395,known,2,9,2516.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+166,1072,new,2,10,2392.1111111111113,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,5181,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,3106,new,3,2,5181.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,2903,known,2,3,4143.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,3086,known,3,4,3730.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,34496,new,7,5,3569.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+167,6483,known,2,6,9754.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,5539,known,1,7,9209.166666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,5577,known,3,8,8684.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+167,29568,new,7,9,8296.375,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+167,3727,new,2,10,10659.888888888889,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,873,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,10976,new,7,2,873.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+168,1826,new,3,3,5924.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,739,known,2,4,4558.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,1908,new,2,5,3603.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,711,known,2,6,3264.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,859,new,3,7,2838.8333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,1183,new,3,8,2556.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,1465,known,1,9,2384.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+168,10976,new,6,10,2282.222222222222,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+169,3201,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,5841,known,3,2,3201.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,4406,new,1,3,4521.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,2528,known,1,4,4482.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,3334,new,2,5,3994.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,3323,known,2,6,3862.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,5347,new,3,7,3772.1666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,3287,new,3,8,3997.1428571428573,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,3260,known,2,9,3908.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+169,3167,new,3,10,3836.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,2576,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,2851,known,1,2,2576.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,2060,new,3,3,2713.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,3495,known,3,4,2495.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,2100,known,2,5,2745.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,1525,known,3,6,2616.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,2482,known,2,7,2434.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,2975,known,1,8,2441.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,3691,known,3,9,2508.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+170,3317,new,2,10,2639.4444444444443,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,4595,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,2070,known,1,2,4595.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,3176,known,3,3,3332.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,4028,new,3,4,3280.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,4804,known,2,5,3467.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,2125,known,1,6,3734.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,3846,new,3,7,3466.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,2627,known,2,8,3520.5714285714284,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,4885,new,3,9,3408.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+171,2339,known,1,10,3572.8888888888887,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,3163,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,2040,known,2,2,3163.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,2307,new,2,3,2601.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,1859,known,3,4,2503.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,29200,new,4,5,2342.25,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+172,1552,known,3,6,7713.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,2133,new,1,7,6686.833333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,3720,known,2,8,6036.285714285715,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,3352,known,2,9,5746.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+172,2223,new,3,10,5480.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,997,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,767,known,3,2,997.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,654,new,1,3,882.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,918,known,2,4,806.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,837,known,2,5,834.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,870,new,3,6,834.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,766,new,2,7,840.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,725,known,2,8,829.8571428571429,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,1058,new,2,9,816.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+173,973,known,3,10,843.5555555555555,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,1220,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,2152,known,3,2,1220.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,1953,known,3,3,1686.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,1112,known,3,4,1775.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,2053,known,3,5,1609.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,1323,known,1,6,1698.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,1655,new,1,7,1635.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,751,known,1,8,1638.2857142857142,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,1518,new,3,9,1527.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+174,1569,new,2,10,1526.3333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,6071,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,3874,known,1,2,6071.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,4432,known,2,3,4972.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,6125,new,3,4,4792.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,3003,known,3,5,5125.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,5073,new,1,6,4701.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,5683,new,1,7,4763.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,2906,new,3,8,4894.428571428572,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,4506,known,2,9,4645.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+175,2780,known,1,10,4630.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,2079,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,2973,known,3,2,2079.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,2066,known,1,3,2526.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,3400,known,3,4,2372.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,2545,new,2,5,2629.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,2315,new,3,6,2612.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,1775,known,1,7,2563.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,1739,new,1,8,2450.4285714285716,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,2539,known,3,9,2361.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+176,1802,new,3,10,2381.222222222222,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,3482,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,5550,known,2,2,3482.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,3085,new,2,3,4516.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,38930,new,4,4,4039.0,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+177,4939,known,3,5,12761.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,3413,known,3,6,11197.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,3705,known,2,7,9899.833333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,5338,known,2,8,9014.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,2480,new,2,9,8555.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+177,38930,new,7,10,7880.222222222223,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+178,443,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+178,754,known,3,2,443.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+178,4431,new,6,3,598.5,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+178,400,known,3,4,1876.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+178,485,known,2,5,1507.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+178,3165,new,4,6,1302.6,1,1,Low,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Allow transaction; continue monitoring
+178,534,known,1,7,1613.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+178,547,new,3,8,1458.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+178,324,new,2,9,1344.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+178,748,new,1,10,1231.4444444444443,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,2756,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,1609,known,2,2,2756.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,1748,known,1,3,2182.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,1772,known,3,4,2037.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,1859,known,2,5,1971.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,1807,known,3,6,1948.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,2076,known,1,7,1925.1666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,1691,new,3,8,1946.7142857142858,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,2945,known,1,9,1914.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+179,1532,known,3,10,2029.2222222222222,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,4245,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,2258,new,3,2,4245.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,17004,new,7,3,3251.5,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+180,2997,known,1,4,7835.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,3849,known,3,5,6626.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,1466,known,2,6,6070.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,3745,known,2,7,5303.166666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,14170,new,4,8,5080.571428571428,-1,1,Low,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Allow transaction; continue monitoring
+180,2490,known,1,9,6216.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+180,3047,new,2,10,5802.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,5705,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,6697,new,3,2,5705.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,2986,known,1,3,6201.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,3966,known,3,4,5129.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,2843,known,3,5,4838.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,36832,new,4,6,4439.4,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+181,46040,new,5,7,9838.166666666666,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+181,3280,known,3,8,15009.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,2394,known,2,9,13543.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+181,6586,new,3,10,12304.777777777777,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,2292,new,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,2256,known,2,2,2292.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,2887,new,1,3,2274.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,4134,new,1,4,2478.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,3865,known,1,5,2892.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,4094,known,2,6,3086.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,4940,known,3,7,3254.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,2245,known,3,8,3495.4285714285716,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+182,24822,new,7,9,3339.125,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+182,2387,known,1,10,5726.111111111111,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,2886,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,4917,known,2,2,2886.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,4308,known,1,3,3901.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,5661,known,1,4,4037.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,31480,new,6,5,4443.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+183,31480,new,4,6,9850.4,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+183,3478,known,2,7,13455.333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,3211,new,3,8,12030.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,3475,new,2,9,10927.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+183,5145,known,3,10,10099.555555555555,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,22572,new,6,1,0.0,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+184,1293,known,1,2,22572.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,2795,new,3,3,11932.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,2094,new,1,4,8886.666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,1499,known,3,5,7188.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,1433,known,3,6,6050.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,12540,new,5,7,5281.0,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+184,2869,known,3,8,6318.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,3035,new,1,9,5886.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+184,2323,known,2,10,5570.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,2888,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,2416,known,3,2,2888.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,2018,known,2,3,2652.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,3251,known,3,4,2440.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,4741,known,2,5,2643.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,2671,known,1,6,3062.8,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,4396,known,3,7,2997.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,1751,known,2,8,3197.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,4498,known,2,9,3016.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+185,1786,new,2,10,3181.1111111111113,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+186,1025,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+186,2088,known,1,2,1025.0,1,1,Low,Amount is much higher than previous average,Allow transaction; continue monitoring
+186,11544,new,5,3,1556.5,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+186,1367,known,2,4,4885.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+186,2882,new,1,5,4006.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+186,1492,known,1,6,3781.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+186,1366,new,2,7,3399.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+186,15392,new,4,8,3109.1428571428573,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+186,1306,new,2,9,4644.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+186,1770,known,1,10,4273.555555555556,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,2704,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,3123,known,2,2,2704.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,2138,new,3,3,2913.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,4648,known,2,4,2655.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,31960,new,5,5,3153.25,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+187,3714,known,3,6,8914.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,4150,known,3,7,8047.833333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,4223,known,2,8,7491.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,3467,known,3,9,7082.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+187,3406,new,3,10,6680.777777777777,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,2093,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,1477,known,1,2,2093.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,3289,new,2,3,1785.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,2310,known,1,4,2286.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,2344,known,3,5,2292.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,1586,known,3,6,2302.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,2947,known,1,7,2183.1666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,3783,known,3,8,2292.285714285714,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,3780,known,3,9,2478.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+188,3682,new,1,10,2623.222222222222,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+189,2734,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+189,18378,new,5,2,2734.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+189,18378,new,5,3,10556.0,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+189,2672,known,2,4,13163.333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+189,18378,new,5,5,10540.5,-1,0,Medium,Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+189,2606,known,3,6,12108.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+189,2988,known,2,7,10524.333333333334,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+189,2377,known,3,8,9447.714285714286,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+189,1639,known,1,9,8563.875,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+189,2520,known,3,10,7794.444444444444,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,2262,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,4062,known,1,2,2262.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,2267,known,2,3,3162.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,2755,known,1,4,2863.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,4424,new,2,5,2836.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,3873,known,1,6,3154.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,4053,known,3,7,3273.8333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,3581,known,2,8,3385.1428571428573,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,2523,known,2,9,3409.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+190,1912,new,3,10,3311.1111111111113,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,3454,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,4464,known,2,2,3454.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,26000,new,7,3,3959.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+191,2306,known,2,4,11306.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,3063,new,2,5,9056.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,3588,new,3,6,7857.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,16250,new,6,7,7145.833333333333,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+191,1707,known,2,8,8446.42857142857,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,1928,known,1,9,7604.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+191,2284,new,1,10,6973.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,1323,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,694,known,3,2,1323.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,1520,known,1,3,1008.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,1051,known,2,4,1179.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,1737,known,3,5,1147.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,1117,known,1,6,1265.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,6310,new,7,7,1240.3333333333333,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+192,810,known,3,8,1964.5714285714287,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+192,7572,new,6,9,1820.25,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+192,798,known,1,10,2459.3333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,3806,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,4507,new,2,2,3806.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,5504,known,2,3,4156.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,2060,known,2,4,4605.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,37560,new,4,5,3969.25,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+193,2229,new,2,6,10687.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,3573,new,1,7,9277.666666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,5321,known,3,8,8462.714285714286,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,4071,new,2,9,8070.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+193,37560,new,4,10,7625.666666666667,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+194,6539,new,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,3513,known,2,2,6539.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,3675,known,1,3,5026.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,5774,known,3,4,4575.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,3517,new,2,5,4875.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,2854,known,2,6,4603.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,6828,known,2,7,4312.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,2407,new,3,8,4671.428571428572,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,5743,known,2,9,4388.375,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+194,3126,known,3,10,4538.888888888889,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,3614,known,2,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,4103,known,3,2,3614.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,1574,known,2,3,3858.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,3953,new,3,4,3097.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,1579,known,2,5,3311.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,1622,new,2,6,2964.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,2946,known,2,7,2740.8333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,2662,known,2,8,2770.1428571428573,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,4226,known,1,9,2756.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+195,3235,known,2,10,2919.8888888888887,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,999,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,1448,new,2,2,999.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,1380,known,3,3,1223.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,749,known,3,4,1275.6666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,7386,new,5,5,1144.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+196,733,known,1,6,2392.4,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,1353,new,1,7,2115.8333333333335,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,1565,new,2,8,2006.857142857143,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,868,new,1,9,1951.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+196,1616,new,2,10,1831.2222222222222,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,5058,known,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,21935,new,7,2,5058.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+197,2599,known,3,3,13496.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,3948,known,3,4,9864.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,3886,known,3,5,8385.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,2357,new,1,6,7485.2,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,3276,new,1,7,6630.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,2262,known,2,8,6151.285714285715,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,4695,new,3,9,5665.125,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+197,5664,known,2,10,5557.333333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,3054,known,3,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,22870,new,6,2,3054.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+198,2300,known,3,3,12962.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,1404,known,2,4,9408.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,2277,known,3,5,7407.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,2366,known,1,6,6381.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,2127,known,3,7,5711.833333333333,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,2452,new,1,8,5199.714285714285,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,3180,known,2,9,4856.25,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+198,22870,new,5,10,4670.0,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+199,4630,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,4269,known,3,2,4630.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,2884,known,3,3,4449.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,2396,known,1,4,3927.6666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,4689,known,3,5,3544.75,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,4779,known,3,6,3773.6,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,4335,known,1,7,3941.1666666666665,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,4703,known,2,8,3997.4285714285716,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,3012,known,2,9,4085.625,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+199,33110,new,4,10,3966.3333333333335,-1,1,Medium,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Request additional verification
+200,3777,new,1,1,0.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,5310,new,2,2,3777.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,3419,known,1,3,4543.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,5932,known,2,4,4168.666666666667,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,3661,known,2,5,4609.5,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,34944,new,6,6,4419.8,-1,1,High,Amount is much higher than previous average; Payment is made to a new recipient; Multiple recent transfers,Flag for urgent review
+200,3899,known,3,7,9507.166666666666,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,6194,known,1,8,8706.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,5701,known,2,9,8392.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
+200,5324,known,1,10,8093.0,1,0,Low,No unusual pattern detected,Allow transaction; continue monitoring
